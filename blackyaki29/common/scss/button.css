@@ -24,29 +24,12 @@ a:hover .button-simple {
   background-color: #00875d; /*触れたときの背景色*/
   color: #fff; /*触れたときの文字色*/
   box-shadow: 0 0px 0 rgba(0, 0, 0, 0.3);
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
   top: 3px;
 }
 
 .dokidoki {
-  -webkit-animation: dokidoki 1.5s infinite;
-          animation: dokidoki 1.5s infinite;
-}
-
-@-webkit-keyframes dokidoki {
-  0% {
-    transform: scale(1.05);
-  }
-  5% {
-    transform: scale(1);
-  }
-  95% {
-    transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1.05);
-  }
+  animation: dokidoki 1.5s infinite;
 }
 
 @keyframes dokidoki {
@@ -62,4 +45,4 @@ a:hover .button-simple {
   100% {
     -webkit-transform: scale(1.05);
   }
-}/*# sourceMappingURL=button1.0.css.map */
+}/*# sourceMappingURL=button.css.map */

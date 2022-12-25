@@ -7,7 +7,7 @@
   text-align: center;
   color: #fff;
   /*ローディング画面時＆動画が表示されないときに表示する背景画像のレスポンシブ化*/
-  background: url("../img/movie.jpg") no-repeat;
+  background: url("../images/movie.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -39,21 +39,9 @@
 
 /*jQueryで付与されたappearクラスがついたらYoutubeエリアをふわっと表示*/
 #youtube-area.appear {
-  -webkit-animation-name: PageAnimeAppear;
-          animation-name: PageAnimeAppear;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes PageAnimeAppear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation-name: PageAnimeAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes PageAnimeAppear {
@@ -95,4 +83,4 @@
   color: #fff;
   padding: 300px 0;
   text-align: center;
-}/*# sourceMappingURL=youtube1.0.css.map */
+}/*# sourceMappingURL=youtube.css.map */
