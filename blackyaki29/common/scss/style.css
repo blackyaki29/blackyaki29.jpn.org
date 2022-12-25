@@ -179,9 +179,16 @@ body {
 .text_summary {
   margin-top: 20px;
 }
-
 .text_summary ul li {
   margin-bottom: 20px;
+}
+
+.image_summary {
+  margin-top: 20px;
+}
+.image_summary img {
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
 .block_profile {
