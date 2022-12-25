@@ -1,0 +1,371 @@
+@charset "UTF-8";
+/*
+□□□□□□□□□□□□□□□□□
+□□□□□■□□□□□□■□■□□
+□□□□□■■□□□□□■□■□□
+□□□□□□■■■□□□□□□□□
+□□□□□□□□■■□□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□■■□□□□□□□□□□
+□□□□□□■■□□□□□□□□□
+□□□□□□□■■□□□■■□□□
+□■□□□□□□■□□□□■■□□
+□■□□□□□□■■□□□□■□□
+□■□■■□□□□■□□□□■■□
+□■■■□□□□□■□□□□□■□
+□□■□□□□□■■□□□□□□□
+□□□□□□■■■□□□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□■■□□□□□□□□
+□□□□□□□□■■□□□□□□□
+□□□□■□□□□■■□□□□□□
+□□□□■□□□□□□□□□□□□
+□□□■■□□□□□□□□□□□□
+□□□■□□□□□□□□□□□□□
+□□□■□□□□□□□□□□□□□
+□□□■□□■■■■■■■□□□□
+□□□■■■■□□□□□■■□□□
+□□■■□□□□□□□□□■□□□
+□□□□□□□□□□□□□■□□□
+□□□□□□□□□□□□□■□□□
+□□□□□□□□□□□□■■□□□
+□□□□□□□□□□■■■□□□□
+□□□□□□□■■■■□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□■■■■□□□□□□
+□□□□□■■■□□□■□□□□□
+□□□■■■□□□□□□■□□□□
+□□□□□□□□□□□□■□□□□
+□□□□□□□□□□□□■□□□□
+□□□□□□□□□□□■■□□□□
+□□□□□□□□□□■■□□□□□
+□□□□□□□□■■■□□□□□□
+□□□□□□□□□□□□□□□□□
+□□□□□□□□□□□■□□□□□
+□□□□□□□□□□■■□□□□□
+□□□□□□□□□■■□□□□□□
+□□□□□□□□■■□□□□□□□
+□□□□□□□■■□□□□□□□□
+□□□□□□■■□□□□□□□□□
+□□□□■■□□□□□□□□□□□
+□□□■■□□□□□□□□□□□□
+□□□□■■□□□□□□□□□□□
+□□□□□■■□□□□□□□□□□
+□□□□□□■■□□□□□□□□□
+□□□□□□□■■□□□□□□□□
+□□□□□□□□■■□□□□□□□
+□□□□□□□□□■■□□□□□□
+□□□□□□□□□□■■□□□□□
+□□□□□□□□□□□■□□□□□
+*/
+body {
+  background-color: rgba(255, 255, 255, 0);
+  min-width: 320px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+[class^=block_] {
+  text-align: center;
+}
+[class^=block_]:nth-child(2n):not(:nth-child(2)) {
+  padding: 120px 10px;
+  background-color: rgba(158, 208, 233, 0.6);
+  position: relative;
+}
+
+[class^=block_]:nth-child(2n+1):not(.block_mainvisual, .block_logo) {
+  position: relative;
+  background-color: rgba(46, 154, 207, 0.5);
+  background-blend-mode: luminosity;
+  background-attachment: fixed;
+}
+
+[class^=block_]:nth-child(2n+1) .wrap {
+  padding: 120px 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.block_mainvisual {
+  padding: 30px 0;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 100px;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+
+.box_mainvisual {
+  text-align: left;
+  z-index: 2;
+}
+
+.block_logo {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  width: 300px;
+  height: 200px;
+  margin-left: -150px;
+  z-index: 3;
+}
+.block_logo img {
+  width: 100%;
+}
+
+/* SVG */
+/*SVGの横幅*/
+.svganimeblock {
+  max-width: 800px;
+  width: 100%;
+}
+
+/*SVGの可変*/
+.svganimeblock svg {
+  width: 100%;
+}
+
+/*アニメーション前のパスの指定*/
+.svganimeblock svg path {
+  fill-opacity: 0; /*最初は透過0で見えない状態*/
+  transition: fill-opacity 0.5s; /*カラーがつく際のアニメーション0.5秒で変化*/
+  fill: none; /*塗りがない状態*/
+  stroke: #FFF; /*線の色*/
+  stroke-width: 3px;
+}
+
+/*アニメーション後に.doneというクラス名が付与された時のパスの指定*/
+.svganimeblock svg.done path {
+  fill: #FFF; /*塗りの色*/
+  fill-opacity: 1; /*透過1で見える状態*/
+  stroke: none; /*線の色なし*/
+}
+
+/* ロゴ下リード文章 */
+.text_lead {
+  margin-top: 20px;
+  color: #FFF;
+  text-align: center;
+}
+
+.text_headline_wrap {
+  margin: 0 auto;
+  width: 300px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 6px dotted #FFF;
+  color: #FFF;
+}
+.text_headline_wrap .text_headline {
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+}
+.text_headline_wrap .text_jp {
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1em;
+  text-indent: 1em;
+  color: #FFF;
+  display: inline-block;
+}
+
+.text_summary {
+  margin-top: 20px;
+}
+
+.text_summary ul li {
+  margin-bottom: 20px;
+}
+
+.block_profile {
+  background-color: #FFF;
+}
+
+.block_portfolio::before {
+  content: "";
+  width: 100%;
+  height: inherit;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+footer {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #333;
+  color: #FFF;
+  position: relative;
+}
+
+/*========= 背景動画設定のCSS ===============*/
+/*header設定*/
+#header {
+  position: relative; /*ローディング画像などを表示す際の基点とするため指定*/
+  height: 100vh; /*高さを全画面にあわせる*/
+  text-align: center;
+  color: #fff;
+  /*ローディング画面時＆動画が表示されないときに表示する背景画像のレスポンシブ化*/
+  background: url("../img/movie.jpg") no-repeat;
+  background-size: cover;
+}
+
+/* ローディングアイコン設定 */
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+/*jQueryで付与されたdisappearクラスがついたらロゴエリアを非表示*/
+#loading.disappear {
+  display: none;
+}
+
+/* youtube設定 */
+#youtube-area {
+  position: fixed;
+  z-index: 0; /*最背面に設定*/
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/*jQueryで付与されたappearクラスがついたらYoutubeエリアをふわっと表示*/
+#youtube-area.appear {
+  -webkit-animation-name: PageAnimeAppear;
+          animation-name: PageAnimeAppear;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#youtube {
+  /*天地中央配置*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*縦横幅指定*/
+  width: 177.77777778vh; /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+  height: 56.25vw; /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/*youtubeがクリックされないためのマスク*/
+#youtube-mask {
+  position: absolute;
+  z-index: 2; /*下から2番目に表示*/
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*下のコンテンツ*/
+#container {
+  position: relative; /*relativeを指定してfixed指定をした#youtube-areaの上に表示*/
+  z-index: 3; /*一番上に表示*/
+  /*見た目の調整*/
+  background: #333;
+  color: #fff;
+  padding: 300px 0;
+  text-align: center;
+}
+
+.button-simple {
+  position: relative;
+  font-weight: bold;
+  padding: 5px 15px;
+  margin: 0px 5px;
+  border-radius: 30px; /*角の丸み*/
+  font-size: 18px; /*文字サイズ*/
+  background-color: #000; /*背景色*/
+  color: #fff; /*文字色*/
+  display: inline-block;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.button-simple:before {
+  font-family: "Font Awesome 5 Free", "FontAwesome";
+  content: "\f144"; /*好きなアイコン*/
+  color: #FFF; /*アイコンの色*/
+  margin-right: 3px;
+}
+
+a:hover .button-simple {
+  background-color: #00875d; /*触れたときの背景色*/
+  color: #fff; /*触れたときの文字色*/
+  box-shadow: 0 0px 0 rgba(0, 0, 0, 0.3);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  top: 3px;
+}
+
+.dokidoki {
+  -webkit-animation: dokidoki 1.5s infinite;
+          animation: dokidoki 1.5s infinite;
+}
+
+@-webkit-keyframes dokidoki {
+  0% {
+    transform: scale(1.05);
+  }
+  5% {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+  }
+}
+
+@keyframes dokidoki {
+  0% {
+    transform: scale(1.05);
+  }
+  5% {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+  }
+}/*# sourceMappingURL=style1.1.css.map */
