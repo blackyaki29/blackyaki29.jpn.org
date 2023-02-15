@@ -1,168 +1,51 @@
-/*
-□□□□□□□□□□□□□□□□□
-□□□□□■□□□□□□■□■□□
-□□□□□■■□□□□□■□■□□
-□□□□□□■■■□□□□□□□□
-□□□□□□□□■■□□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□■■□□□□□□□□□□
-□□□□□□■■□□□□□□□□□
-□□□□□□□■■□□□■■□□□
-□■□□□□□□■□□□□■■□□
-□■□□□□□□■■□□□□■□□
-□■□■■□□□□■□□□□■■□
-□■■■□□□□□■□□□□□■□
-□□■□□□□□■■□□□□□□□
-□□□□□□■■■□□□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□■■□□□□□□□□
-□□□□□□□□■■□□□□□□□
-□□□□■□□□□■■□□□□□□
-□□□□■□□□□□□□□□□□□
-□□□■■□□□□□□□□□□□□
-□□□■□□□□□□□□□□□□□
-□□□■□□□□□□□□□□□□□
-□□□■□□■■■■■■■□□□□
-□□□■■■■□□□□□■■□□□
-□□■■□□□□□□□□□■□□□
-□□□□□□□□□□□□□■□□□
-□□□□□□□□□□□□□■□□□
-□□□□□□□□□□□□■■□□□
-□□□□□□□□□□■■■□□□□
-□□□□□□□■■■■□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□■■■■□□□□□□
-□□□□□■■■□□□■□□□□□
-□□□■■■□□□□□□■□□□□
-□□□□□□□□□□□□■□□□□
-□□□□□□□□□□□□■□□□□
-□□□□□□□□□□□■■□□□□
-□□□□□□□□□□■■□□□□□
-□□□□□□□□■■■□□□□□□
-□□□□□□□□□□□□□□□□□
-□□□□□□□□□□□■□□□□□
-□□□□□□□□□□■■□□□□□
-□□□□□□□□□■■□□□□□□
-□□□□□□□□■■□□□□□□□
-□□□□□□□■■□□□□□□□□
-□□□□□□■■□□□□□□□□□
-□□□□■■□□□□□□□□□□□
-□□□■■□□□□□□□□□□□□
-□□□□■■□□□□□□□□□□□
-□□□□□■■□□□□□□□□□□
-□□□□□□■■□□□□□□□□□
-□□□□□□□■■□□□□□□□□
-□□□□□□□□■■□□□□□□□
-□□□□□□□□□■■□□□□□□
-□□□□□□□□□□■■□□□□□
-□□□□□□□□□□□■□□□□□
-*/
-
+/* __body */
 
 body {
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(255,255,255,1);
   min-width: 320px;
   font-family: 'Courier New', Courier, monospace;
 }
 
-[class^="block_"] {
+/* __wrapper */
+
+.wrapper {
+  width: 100%;
+  background: url(../images/bg_mainvisual.jpg) repeat-y top center/cover rgba(46,154,207,0.5);
+}
+
+[class^="block_"]:not(.block_mainvisual):not(.block_logo)  {
+  margin: 30px 10% 0;
+  width: 80%;
   text-align: center;
-  &:nth-child(2n):not(:nth-child(2)) {
-    padding: 120px 10px;
-    background-color: rgb(158, 208, 233, 0.6);
-    position: relative;
-  }  
-}
-[class^="block_"]:nth-child(2n+1):not(.block_mainvisual ,.block_logo) {
-  position: relative;
-  background-color: rgba(46,154,207,0.5);
-  // background: url(../images/bg_mainvisual.jpg) repeat-y top center/cover rgba(46,154,207,0.5);
-  background-blend-mode: luminosity;
-  background-attachment: fixed;
-}
-[class^="block_"]:nth-child(2n+1) .wrap {
   padding: 120px 10px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgb(158, 208, 233, 0.6);
 }
+
+/* __header */
+/* ____mainvisual */
 
 .block_mainvisual {
   padding: 30px 0;
-  margin: 0 auto;
-  width: 100%;
-  padding-top: 100px;
-  // background: url(../images/bg_mainvisual.jpg) repeat-y top center/cover rgba(255,255,255,0.2);
-  background-color: rgba(0,0,0,1);
-  z-index: 1;
-  position: absolute;
-  top: 0;
-    // &::before {
-    // position: absolute;
-    // left: 0;
-    // bottom: 0;
-    // content: "";
-    // display: inline-block;
-    // width: 100%;
-    // height: 300px;
-    // // background: rgba(46, 154, 207, 0.5) 0% 0% no-repeat padding-box;
-    // mix-blend-mode: multiply;
-    // opacity: 0.6;
-    // }
-}
-.box_mainvisual {
-  // padding: 30px 0 100px;
-  text-align: left;
-  z-index: 2;
+  // background-color: rgba(255,255,255,1);
 }
 
 .block_logo {
-  position: absolute;
-  left: 50%;
-  top: 10px;
+  margin: 0 auto;
   width: 300px;
-  height: 200px;
-  margin-left: -150px;
-  z-index: 3;
+  height: 60px;
   img{
     width: 100%;
   }
 }
 
-/* SVG */
-/*SVGの横幅*/
-.svganimeblock{
-	max-width:800px;
-	width:100%;
-}
-/*SVGの可変*/
-.svganimeblock svg{
-	width:100%;
-}
-/*アニメーション前のパスの指定*/
-.svganimeblock svg path {
-  fill-opacity: 0;/*最初は透過0で見えない状態*/
-  transition: fill-opacity .5s;/*カラーがつく際のアニメーション0.5秒で変化*/
-  fill: none;/*塗りがない状態*/
-  stroke: #FFF;/*線の色*/
-  stroke-width: 3px;
-}
-
-/*アニメーション後に.doneというクラス名が付与された時のパスの指定*/
-.svganimeblock svg.done path{
-  fill: #FFF;/*塗りの色*/
-  fill-opacity: 1;/*透過1で見える状態*/
-  stroke: none;/*線の色なし*/
-}
-
 /* ロゴ下リード文章 */
 .text_lead {
-  margin-top: 20px;
-  color: #FFF;
-  text-align: center;
+  h1 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+  }
 }
 
 .text_headline_wrap {
@@ -171,8 +54,8 @@ body {
   padding-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
-  border-bottom: 6px dotted #FFF;
-  color: #FFF;
+  border-bottom: 6px dotted #333;
+  color: #333;
   .text_headline {
     letter-spacing: 0.3em;
     text-indent: 0.3em;
@@ -182,7 +65,7 @@ body {
     font-size: 14px;
     letter-spacing: 1em;
     text-indent: 1em;
-    color: #FFF;
+    color: #333;
     display: inline-block;
   }
 }
@@ -203,6 +86,11 @@ body {
     margin: 0 auto;
     border-radius: 50%;
   }
+  ul {
+    li {
+      display: inline-block;
+    }
+  }
 }
 
 .block_profile {
@@ -221,7 +109,13 @@ body {
       }      
 }
 
+.wrap_insta {
+  margin: 0 auto;
+  width: 540px;
+}
+
 footer {
+  margin-top: 30px;
   width: 100%;
   padding: 10px 0;
   text-align: center;
@@ -230,5 +124,5 @@ footer {
   position: relative;
 }
 
-@import "youtube.scss";
+// @import "youtube.scss";
 @import "button.scss";
